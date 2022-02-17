@@ -10,16 +10,13 @@ import JUnit.Junit09_Geometria.dto.Geometria;
 
 class GeometriaTest {
 
-	Geometria geo, geo2;
+	Geometria geo;
 	
 	@BeforeEach
     public void before()
     {
-        System.out.println("before()");
-        geo = new Geometria();
-
         System.out.println("before(id)");
-        geo2 = new Geometria(5);
+        geo = new Geometria(5);
     }
 
     @AfterEach
@@ -27,7 +24,6 @@ class GeometriaTest {
     {
         System.out.println("after()");
         geo = null;
-        geo2 = null;
     }
  
     @Test
@@ -60,5 +56,14 @@ class GeometriaTest {
         assertEquals(esper, result);
     }
 
+    @Test
+    public void testAreaRectangulo()
+    {
+        System.out.println("testAreaRectangulo()");
+        int result = geo.arearectangulo(2, 2);
+        double esper = 4;
+
+        assertEquals(esper, result);
+    }
     
 }
